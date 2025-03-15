@@ -13,89 +13,70 @@
     combos {
         compatible = "zmk,combos";
 
-        utils_layer_l {
-            bindings = <&mo 1>;
+        lock {
+            bindings = <&to 4>;
+            key-positions = <20 22 24>;
+        };
+
+        bt {
+            bindings = <&lt 3 A>;
+            key-positions = <30 31 32>;
+        };
+
+        unlock {
+            bindings = <&to 0>;
             key-positions = <20 21 22 23>;
-        };
-
-        utils_layer_r {
-            bindings = <&mo 1>;
-            key-positions = <26 27 28 29>;
-        };
-
-        mod {
-            bindings = <&mo 2>;
-            key-positions = <12 13>;
-        };
-
-        modopt {
-            bindings = <&mo 3>;
-            key-positions = <11 13>;
-        };
-
-        modctrl {
-            bindings = <&mo 4>;
-            key-positions = <10 13>;
-        };
-
-        num {
-            bindings = <&mo 7>;
-            key-positions = <23 22>;
-        };
-
-        cmd {
-            bindings = <&sk LEFT_COMMAND>;
-            key-positions = <16 17>;
-        };
-
-        ctrl {
-            bindings = <&sk LEFT_CONTROL>;
-            key-positions = <16 18>;
-        };
-
-        cmd_ctrl {
-            bindings = <&sk LC(LEFT_COMMAND)>;
-            key-positions = <16 19>;
-        };
-
-        modcmd {
-            bindings = <&to 5>;
-            key-positions = <6 7>;
-        };
-
-        spotlight {
-            bindings = <&kp LG(SPACE)>;
-            key-positions = <13 16>;
         };
     };
 
     macros {
-        up5: up5 {
+        altsae: altsae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
-            label = "UP5";
+            bindings = <&kp RA(RG(S)) &kp RA(RG(A)) &kp RA(E)>;
+            label = "ALTSAE";
         };
 
-        down5: down5 {
+        mmattest: mmattest {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW>;
-            label = "DOWN5";
+            bindings = <&kp F2 &kp BACKSPACE &kp PERIOD &kp M &kp M &kp A &kp T &kp T &kp E &kp S &kp T &kp ENTER &kp F2>;
+            label = "MMATTEST";
         };
 
-        up10: up10 {
+        dot25: dot25 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW &kp UP_ARROW>;
-            label = "UP10";
+            bindings = <&kp DOT &kp N2 &kp N5 &kp RET>;
+            label = "DOT25";
         };
 
-        down10: down10 {
+        dot35: dot35 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW &kp DOWN_ARROW>;
-            label = "DOWN10";
+            bindings = <&kp DOT &kp N3 &kp N5 &kp RET>;
+            label = "DOT35";
+        };
+
+        dot50: dot50 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp N5 &kp N0 &kp RET>;
+            label = "DOT50";
+        };
+
+        dcl30: dcl30 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp DOT &kp D &kp C &kp L &kp N3 &kp N0 &kp RET>;
+            label = "DCL30";
+        };
+
+        dcm30: dcm30 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp DOT &kp D &kp C &kp M &kp N3 &kp N0 &kp RET>;
+            label = "DCM30";
         };
     };
 
@@ -104,14 +85,32 @@
 
         default_layer {
             bindings = <
-&kp SEMI        &kp COMMA  &kp PERIOD  &kp P       &kp Y  &kp F  &kp G      &kp C  &kp R  &kp L
-&kp A           &kp O      &kp E       &kp U       &kp I  &kp D  &kp H      &kp T  &kp N  &kp S
-&mt LSHIFT SQT  &kp Q      &kp J       &kp K       &kp X  &kp B  &kp M      &kp W  &kp V  &mt RIGHT_SHIFT Z
-                           &none       &kp ESCAPE  &mo 6  &mo 6  &kp SPACE  &none
+&kp Q        &kp W        &kp E           &kp R           &kp T      &kp Y        &kp U            &kp I                &kp O             &kp P
+&kp A        &kp S        &kp D           &kp F           &kp G      &kp H        &kp J            &kp K                &kp L             &kp SEMI
+&mt LSHFT Z  &mt LCTRL X  &mt LEFT_ALT C  &mt LEFT_GUI V  &kp B      &kp N        &mt RIGHT_GUI M  &mt RIGHT_ALT COMMA  &mt RCTRL PERIOD  &mt RSHFT FSLH
+                          &kp TAB         &kp RET         &lt 0 TAB  &lt 1 ENTER  &kp BSPC         &kp SPACE
             >;
         };
 
-        utils {
+        mod {
+            bindings = <
+&kp F1          &kp F2              &kp F3             &kp F4          &kp F5   &kp MINUS  &kp N7             &kp N8             &kp N9              &kp BACKSPACE
+&kp F6          &kp F7              &kp F8             &kp F9          &kp F10  &kp SEMI   &kp N4             &kp N5             &kp N6              &kp DOT
+&mt LSHFT LEFT  &mt LCTRL UP_ARROW  &mt LEFT_ALT DOWN  &mt LGUI RIGHT  &dot25   &kp N0     &mt RGUI NUMBER_1  &mt RALT NUMBER_2  &mt RCTRL NUMBER_3  &mt RIGHT_SHIFT FSLH
+                                    &mmattest          &dot35          &altsae  &altsae    &dcl30             &dcm30
+            >;
+        };
+
+        modalso {
+            bindings = <
+&kp F1          &kp F2              &kp F3             &kp F4          &kp F5   &kp MINUS  &kp N7             &kp N8             &kp N9              &kp BACKSPACE
+&kp F6          &kp F7              &kp F8             &kp F9          &kp F10  &kp SEMI   &kp N4             &kp N5             &kp N6              &kp DOT
+&mt LSHFT LEFT  &mt LCTRL UP_ARROW  &mt LEFT_ALT DOWN  &mt LGUI RIGHT  &dot25   &kp N0     &mt RGUI NUMBER_1  &mt RALT NUMBER_2  &mt RCTRL NUMBER_3  &mt RIGHT_SHIFT FSLH
+                                    &mmattest          &dot35          &altsae  &altsae    &dcl30             &dcm30
+            >;
+        };
+
+        bt {
             bindings = <
 &out OUT_BLE  &bt BT_CLR  &none  &sys_reset  &bootloader  &bootloader  &sys_reset  &none  &none  &none
 &none         &none       &none  &none       &none        &none        &none       &none  &none  &none
@@ -120,57 +119,12 @@
             >;
         };
 
-        mod {
+        lock {
             bindings = <
-&none        &none  &none  &none  &to 0  &up5    &kp PG_UP  &kp UP_ARROW  &kp PG_DN  &kp BACKSPACE
-&kp LS(RET)  &none  &none  &none  &none  &down5  &kp LEFT   &kp DOWN      &kp RIGHT  &kp LS(RETURN)
-&none        &none  &none  &none  &none  &none   &none      &none         &none      &none
-                    &to 2  &none  &none  &none   &none      &none
-            >;
-        };
-
-        mod_opt {
-            bindings = <
-&trans          &trans  &trans  &trans  &to 0   &up10    &kp HOME      &kp UP    &kp END        &kp LA(BSPC)
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &down10  &kp LA(LEFT)  &kp DOWN  &kp LA(RIGHT)  &trans
-&trans          &trans  &trans  &trans  &trans  &trans   &trans        &trans    &trans         &trans
-                        &to 3   &trans  &trans  &trans   &trans        &trans
-            >;
-        };
-
-        mod_ctrl {
-            bindings = <
-&trans  &trans          &trans  &trans  &to 0   &trans  &trans        &kp UP    &trans         &kp LC(BSPC)
-&trans  &kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &kp LC(LEFT)  &kp DOWN  &kp LC(RIGHT)  &trans
-&trans  &trans          &trans  &trans  &trans  &trans  &trans        &trans    &trans         &trans
-                        &to 4   &trans  &trans  &trans  &trans        &trans
-            >;
-        };
-
-        mod_cmd {
-            bindings = <
-&trans  &trans  &trans  &trans  &to 0   &kp G   &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp W   &kp V   &trans
-                &to 5   &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        symbol {
-            bindings = <
-&kp TAB  &kp LC(TAB)      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp EQUAL  &kp ASTRK  &kp PLUS   &kp AMPS      &kp UNDER      &kp EXCLAMATION
-&kp RET  &kp LC(LS(TAB))  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp POUND  &kp TILDE  &kp SLASH  &kp PIPE      &kp BACKSLASH  &kp MINUS
-&none    &none            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT     &none      &none      &kp QUESTION  &kp CARET      &kp GRAVE
-                          &none                 &none                  &none      &none      &none      &none
-            >;
-        };
-
-        num {
-            bindings = <
-&trans  &trans  &trans  &trans  &to 0   &trans  &kp N7        &kp NUMBER_8  &kp N9        &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
-&trans  &trans  &trans  &trans  &trans  &kp N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
-                &to 7   &trans  &trans  &trans  &trans        &trans
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none  &none  &none  &none  &none
+              &none  &none  &none  &none  &none  &none
             >;
         };
     };
