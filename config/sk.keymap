@@ -33,7 +33,7 @@
         altsae: altsae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp RA(RG(S)) &kp RA(RG(A)) &kp RA(E)>;
+            bindings = <&kp RA(LG(S)) &kp RA(LG(A)) &kp RA(LG(E))>;
             label = "ALTSAE";
         };
 
