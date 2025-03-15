@@ -40,42 +40,46 @@
         mmattest: mmattest {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F2 &kp BACKSPACE &kp PERIOD &kp M &kp M &kp A &kp T &kp T &kp E &kp S &kp T &kp ENTER &kp F2>;
+            bindings =
+                <&kp F2 &kp BACKSPACE &kp PERIOD &kp M &kp M &kp A &kp T &kp T &kp E &kp S &kp T>,
+                <&macro_wait_time 52>,
+                <&kp ENTER &kp F2>;
+
             label = "MMATTEST";
         };
 
         dot25: dot25 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOT &kp N2 &kp N5 &kp RET>;
+            bindings = <&kp DOT &kp N2 &kp N5>;
             label = "DOT25";
         };
 
         dot35: dot35 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOT &kp N3 &kp N5 &kp RET>;
+            bindings = <&kp DOT &kp N3 &kp N5>;
             label = "DOT35";
         };
 
         dot50: dot50 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DOT &kp N5 &kp N0 &kp RET>;
+            bindings = <&kp DOT &kp N5 &kp N0>;
             label = "DOT50";
         };
 
         dcl30: dcl30 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp DOT &kp D &kp C &kp L &kp N3 &kp N0 &kp RET>;
+            bindings = <&none &kp DOT &kp D &kp C &kp L &kp N3 &kp N0>;
             label = "DCL30";
         };
 
         dcm30: dcm30 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp DOT &kp D &kp C &kp M &kp N3 &kp N0 &kp RET>;
+            bindings = <&none &kp DOT &kp D &kp C &kp M &kp N3 &kp N0>;
             label = "DCM30";
         };
     };
