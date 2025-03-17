@@ -90,7 +90,7 @@
         homerowleft: homerowleft {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROWLEFT";
-            bindings = <&mt>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "balanced";
@@ -101,7 +101,7 @@
         homerowright: homerowright {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROWRIGHT";
-            bindings = <&mt>, <&kp>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "balanced";
